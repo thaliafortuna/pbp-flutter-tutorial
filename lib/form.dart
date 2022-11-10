@@ -237,7 +237,11 @@ class _MyFormPageState extends State<MyFormPage> {
                                           ),
                                           Center(child: Text('Umur: '+ umur.toString())),
                                           Center(child: Text('Kelas: '+ kelasPBP)),
-                                          SizedBox(height: 20),
+                                          Center(child: Text(
+                                              _nilaiSwitch ? "Practice Mode" : ""
+                                            )
+                                          ),
+                                          SizedBox(height: 15),
                                           TextButton(
                                             onPressed: () {
                                               Navigator.pop(context);
