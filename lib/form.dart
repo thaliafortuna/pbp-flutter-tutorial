@@ -222,12 +222,6 @@ class _MyFormPageState extends State<MyFormPage> {
                                           // TODO: Munculkan informasi yang didapat dari form
                                           Center(child: Text('Judul: ' + _namaLengkap)),
                                           Center(child: Text('Kelas: '+ kelasPBP)),
-                                          Column (children:[
-                                            if(jenjangDiploma){
-                                              Text('Jenjang Diploma')
-                                            }
-                                          ]
-                                          )
                                           Center(child: Text('Umur: '+ umur.toString())),
                                           TextButton(
                                             onPressed: () {
