@@ -194,6 +194,16 @@ class _MyFormPageState extends State<MyFormPage> {
                               },
                           ),
                         ),
+                        SwitchListTile(
+                          title: const Text('Practice Mode'),
+                          value: _nilaiSwitch,
+                          onChanged: (bool value) {
+                              setState(() {
+                              _nilaiSwitch = value;
+                              });
+                          },
+                          secondary: const Icon(Icons.run_circle_outlined),
+                        ),
                         TextButton(
                           child: const Text(
                             "Simpan",
@@ -220,9 +230,14 @@ class _MyFormPageState extends State<MyFormPage> {
                                           Center(child: const Text('Informasi Data')),
                                           SizedBox(height: 20),
                                           // TODO: Munculkan informasi yang didapat dari form
-                                          Center(child: Text('Judul: ' + _namaLengkap)),
-                                          Center(child: Text('Kelas: '+ kelasPBP)),
+                                          Center(child: Text('Nama Lengkap: ' + _namaLengkap)),
+                                          Center(child: Text(
+                                              jenjangDiploma ? "Jenjang Diploma" : jenjangDoktor ? "Jenjang Doktor" : jenjangMagister ? "Jenjang Magister" : "Jenjang Sarjana"
+                                            )
+                                          ),
                                           Center(child: Text('Umur: '+ umur.toString())),
+                                          Center(child: Text('Kelas: '+ kelasPBP)),
+                                          SizedBox(height: 20),
                                           TextButton(
                                             onPressed: () {
                                               Navigator.pop(context);
@@ -237,16 +252,6 @@ class _MyFormPageState extends State<MyFormPage> {
                               );
                             }
                           },
-                        ),
-                        SwitchListTile(
-                          title: const Text('Practice Mode'),
-                          value: _nilaiSwitch,
-                          onChanged: (bool value) {
-                              setState(() {
-                              _nilaiSwitch = value;
-                              });
-                          },
-                          secondary: const Icon(Icons.run_circle_outlined),
                         ),
                       ],
                   ),
